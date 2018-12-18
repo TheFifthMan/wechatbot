@@ -28,4 +28,4 @@ environment = LC_ALL="en_US.UTF-8"
 
 
 # screenshot
-[weixin](images/weixin.png)
+![weixin](images/weixin.png)
