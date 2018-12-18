@@ -2,3 +2,4 @@ venv
 .flaskenv
 .vscode
 __pycache__
+.env

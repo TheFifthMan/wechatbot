@@ -1,8 +1,6 @@
 from flask.views import MethodView
 from flask import request,current_app,abort
-from app.utils.tuling import Tuling
-
-
+from app.plugins.tuling import Tuling
 from wechatpy import parse_message, create_reply
 from wechatpy.utils import check_signature
 from wechatpy.exceptions import (
@@ -66,7 +64,14 @@ class WeChat(MethodView):
             abort(403)
         else:
             msg = parse_message(msg)
-            if msg.type == 'text':
+            if msg.content == "help":
+                message = "help \t 帮助信息\t\n " \
+                + "hit \t  一言\t\n " \
+                + "bing \t 每日壁纸\t\n " \
+                + "? \t 有道翻译\t\n "
+                reply = create_reply(message,msg)
+
+            elif msg.type == 'text':
                 message = Tuling(current_app.config['TULING_APIKEY'],msg.content).create_reply()
                 reply = create_reply(message, msg)
             else:
