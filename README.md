@@ -148,3 +148,5 @@ Server Up message
 ```
 最后将 http://<yourIP>/wechat 填入微信公众号即可。
 
+# screenshot
+![srceen](images/weixin.png)
