@@ -70,7 +70,8 @@ class WeChat(MethodView):
                 + "bing \t 每日壁纸\t\n " \
                 + "? \t 有道翻译\t\n "
                 reply = create_reply(message,msg)
-
+            elif msg.content == "壁纸":
+                pass
             elif msg.type == 'text':
                 message = Tuling(current_app.config['TULING_APIKEY'],msg.content).create_reply()
                 reply = create_reply(message, msg)

@@ -20,6 +20,7 @@ class Config(object):
     WECHAT_AES_KEY = os.environ.get('AES_KEY')
     APPID = os.getenv('APPID')
     TULING_APIKEY=os.getenv('TULING_APIKEY')
+    ACCESS_URL = os.getenv("ACCESS_URL")
     
 
 Configuration = {
